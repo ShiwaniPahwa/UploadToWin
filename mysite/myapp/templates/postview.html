@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+text-align:center;
+background-image: url("{% static "post.jpg"%}");
+background-size:cover;
+}
+input[type="submit"] {
+      background: #0D87A5;
+      color: white;
+    }
+ input {
+       padding: 10px;
+      font-size: 17px;
+border: 1px solid blue;
+background-color:rgba(255,255,255,0.4);
+
+}
+
+.appu{
+    width: 350x;
+    height: 300px;
+margin:60px 200px 30px 40px;
+    padding: 30px;
+    border: 1px solid orange;
+background-color:rgba(255,255,255,0.4);
+}
+h1 {color: #EF7524
+}
+span{
+color: #0AB56B
+}
+h1 {
+    text-align: center;
+    font-family: "Comic Sana MS" , cursive, sans-serif;
+    text-size: 40px;
+}
+
+</style>
+</head>
+<body>
+ <header>
+
+     <h1><marquee><span> CREATE </span> POSTS </marquee></h1>
+            </header>
+<div class = "appu"><br>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+    <input type="submit"value="post">
+
+</form>
+</div><br>
+
+
+</body>
+</html>
+

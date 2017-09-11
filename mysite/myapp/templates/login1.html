@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Clone</title>
+    <style>
+        body{
+        background-image: url("{% static "login.jpg"%}");
+        background-size: cover;
+        }
+    </style>
+</head>
+<body>
+  <form  method="post" >
+        {% csrf_token %}
+
+      <input type="text" placeholder="username" name="username" value={{username}}>
+      <input type="password" placeholder="password" name="password" value={{password}}>
+      <input type="submit" value ="login">
+
+    </form>
+
+</body>
+</html>

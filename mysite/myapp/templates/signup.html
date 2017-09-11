@@ -1,0 +1,81 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+         background-image: url("{% static "signup.jpg"%}");
+         background-size: cover;
+
+         }
+         .login_ref{
+         display: inline;
+         background: rgba(1,1,1,0.5);
+         }
+         .button{
+         background: white;
+         }
+    	form{
+    	text-align: left;
+    	background: rgba(1,1,1,0.5);
+    	padding:15px;
+
+    	}
+    	h1{
+    	display: inline;
+    	color: white;
+    	font-style: italic;
+    	background: rgba(0,0,0,0.5);
+
+    	}
+    	h3{
+    	display: inline;
+    	color: white;
+    	font-style: italic;
+    	background: rgba(0,0,0,0.4)
+    	}
+    	div{
+    	margin: 40px;
+    	color: white;
+    	font-style: bold italic;
+
+
+    	}
+    </style>
+	<title>Instagram clone</title>
+</head>
+<body>
+<h3>{{date_show}}</h3>
+</br>
+
+   <h1>Instragram Clone</h1>
+</br>
+   <h3>Sign Up</h3>
+
+   <form method="post">
+        {% csrf_token %}
+       <div>
+           <label for="username">Username: </label>
+           <input id="username" type="text" name="username" value={{username}}>
+       </div>
+
+       <div>
+           <label for="name">Name: </label>
+           <input id="name" type="text" name="name" value={{name}} >
+       </div>
+
+       <div>
+           <label for="email">Email: </label>
+           <input id="email" type="text" name="email" value={{email}} >
+       </div>
+
+       <div>
+           <label for="password">Password: </label>
+           <input id="password" type="password" name="password" value={{password}} >
+       </div>
+           <input type="submit" value="Sign Up" >
+    </form>
+  <div class="login_ref"><h3>Already a user?</h3><a href="login1/" >Login</a> </div>
+
+</body>
+</html>
